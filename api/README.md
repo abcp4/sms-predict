@@ -41,10 +41,9 @@ $ cd api
 $ docker build -t api-sms:latest .
 
 # executar imagem
-$ docker run -p 8000:8000 api-sms:latest
-
-# Para executar em outra porta
-#$ docker run --env PORT=5000 -p 5000:5000 api-sms:latest
+$ docker run -d -v $PWD/../experimento/data/models:/api/models \
+    --name=api-predict \
+    -p 8000:8000 api-sms:latest
 ```
 
 O servidor iniciará na porta:8000 e a documentação estará acessível em http://localhost:8000/docs.

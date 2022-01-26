@@ -6,9 +6,13 @@ services:
     networks:
       - app_network
     container_name: api-service
+    volumes:
+      - ./experimento/data/models/:/api/models:ro
 
   webapp:
     build: webapp/
+    environment:
+      - API_URL=http://api-predict:8000
     depends_on:
       - api-predict
     ports:

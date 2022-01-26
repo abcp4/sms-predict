@@ -1,2 +1,4 @@
 fastapi==0.73.0
+lime==0.2.0.1
+scikit-learn==1.0.2 
 uvicorn[standard]==0.17.0.post1
