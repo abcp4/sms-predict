@@ -3,7 +3,7 @@
 ## Reproduzindo pipeline
 
 ```shell
-pip install -r requirements
+pip install -r requirements.txt
 dvc repro
 ```
 
