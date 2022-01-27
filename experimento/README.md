@@ -1,5 +1,20 @@
 # Experimentos
 
+## Reproduzindo pipeline
+
+```shell
+pip install -r requirements
+dvc repro
+```
+
+2. Visualizar métricas
+```shell
+dvc metrics show
+```
+
+
+## Passo a passo pipeline
+
 1. Preparar os dados
 ```shell
 dvc run -n prepare \  
@@ -30,12 +45,18 @@ dvc run -n evaluate \
                  data/prepared
 ```
 
+4. Visualizar métricas
 ```shell
 dvc metrics show
 ```
 
-Modificar plots
+5. Modificar plots
 ```shell
 dvc plots modify data/metrics/prc.json -x recall -y precision
 dvc plots modify data/metrics/roc.json -x fpr -y tpr
+```
+
+6. Exibir plots
+```shell
+dvc plots show
 ```
