@@ -1,5 +1,0 @@
-outs:
-- md5: 173d8d3f0734eedd1db322ea0825cce1
-  size: 155897
-  path: model.pkl
-  desc: svc-linear

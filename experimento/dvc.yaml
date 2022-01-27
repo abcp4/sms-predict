@@ -21,3 +21,21 @@ stages:
     - train.kernel
     outs:
     - data/models/model.pkl
+  evaluate:
+    cmd: python evaluate.py data/models/model.pkl data/prepared
+    deps:
+    - data/models/model.pkl
+    - data/prepared
+    - evaluate.py
+    metrics:
+    - data/metrics/scores.json:
+        cache: false
+    plots:
+    - data/metrics/prc.json:
+        cache: false
+        x: recall
+        y: precision
+    - data/metrics/roc.json:
+        cache: false
+        x: fpr
+        y: tpr

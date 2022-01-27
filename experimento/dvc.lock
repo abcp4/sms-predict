@@ -38,3 +38,26 @@ stages:
     - path: data/models/model.pkl
       md5: d5231130b7bc391babc5eaf2da32d078
       size: 156041
+  evaluate:
+    cmd: python evaluate.py data/models/model.pkl data/prepared
+    deps:
+    - path: data/models/model.pkl
+      md5: d5231130b7bc391babc5eaf2da32d078
+      size: 156041
+    - path: data/prepared
+      md5: 194ff0db0325ec924cdd739697d87bc3.dir
+      size: 661124
+      nfiles: 2
+    - path: evaluate.py
+      md5: b894157dc0811347d2ee585c021d413f
+      size: 2396
+    outs:
+    - path: data/metrics/prc.json
+      md5: b646ed865db6190795a686ace6c648d1
+      size: 12352
+    - path: data/metrics/roc.json
+      md5: f89b976d7507c45c6278bad98e0dba3f
+      size: 7825
+    - path: data/metrics/scores.json
+      md5: 6cbabb50c94b85811491775976df7396
+      size: 73
