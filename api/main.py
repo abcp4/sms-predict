@@ -9,7 +9,7 @@ from pydantic import BaseModel
 app = FastAPI()
 
 model = pickle.load(open("./models/model.pkl", "rb"))
-explainer = LimeTextExplainer(class_names=['blocked', 'ok'])
+explainer = LimeTextExplainer(class_names=['ok', 'blocked'])
 
 class SMS(BaseModel):
     text: str
@@ -34,7 +34,7 @@ def predict_multiple_sms(data: List[SMS]):
 def predict_sms(text: str):
     exp = explainer.explain_instance(text, model.predict_proba, num_features=20)
     prob = model.predict_proba([text])[0].tolist()
-    predicted = model.predict([text])[0]
+    predicted = model.predict([text])[0].item()
     return {
         "predicted": predicted,
         "probabilities": prob,

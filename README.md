@@ -16,6 +16,12 @@ $ git clone https://github.com/abcp4/sms-predict.git
 # acesse a pasta do projeto
 $ cd sms-predict
 
+# Gere o modelo utilizado
+$ cd experimento
+$ pip install -r requirements.txt
+$ dvc pull data/raw/train_data.cs
+$ dvc repro
+
 # execute o docker-compose
 $ docker-compose up --build
 
