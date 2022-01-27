@@ -1,0 +1,10 @@
+prepare:
+  split: 0.20
+  seed: 42
+
+train:
+  kernel: linear
+  C: 1
+  features:
+    max_features: 500
+    ngrams: 1
