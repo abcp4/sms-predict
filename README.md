@@ -19,11 +19,14 @@ $ cd sms-predict
 # Gere o modelo utilizado
 $ cd experimento
 $ pip install -r requirements.txt
-$ dvc pull data/raw/train_data.cs
+$ dvc pull data/raw/train_data.csv
 $ dvc repro
 
 # execute o docker-compose
 $ docker-compose up --build
+
+# Volte a raiz do projeto
+$ cd ..
 
 # A aplicação iniciará na porta:8501 - disponível em http://0.0.0.0:8501
 ```

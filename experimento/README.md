@@ -4,7 +4,7 @@
 
 ```shell
 pip install -r requirements.txt
-dvc pull data/raw/train_data.cs
+dvc pull data/raw/train_data.csv
 dvc repro
 ```
 
