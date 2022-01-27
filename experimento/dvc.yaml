@@ -9,3 +9,15 @@ stages:
     - prepare.split
     outs:
     - data/prepared
+  train:
+    cmd: python train.py data/prepared data/models/model.pkl
+    deps:
+    - data/prepared
+    - train.py
+    params:
+    - train.C
+    - train.features.max_features
+    - train.features.ngrams
+    - train.kernel
+    outs:
+    - data/models/model.pkl

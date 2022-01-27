@@ -18,3 +18,23 @@ stages:
       md5: 194ff0db0325ec924cdd739697d87bc3.dir
       size: 661124
       nfiles: 2
+  train:
+    cmd: python train.py data/prepared data/models/model.pkl
+    deps:
+    - path: data/prepared
+      md5: 194ff0db0325ec924cdd739697d87bc3.dir
+      size: 661124
+      nfiles: 2
+    - path: train.py
+      md5: 39db684588dbf6f1c229ca9d32adaf67
+      size: 972
+    params:
+      params.yaml:
+        train.C: 1
+        train.features.max_features: 500
+        train.features.ngrams: 1
+        train.kernel: linear
+    outs:
+    - path: data/models/model.pkl
+      md5: d5231130b7bc391babc5eaf2da32d078
+      size: 156041
